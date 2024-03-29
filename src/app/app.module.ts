@@ -12,6 +12,8 @@ import {MatCardModule} from '@angular/material/card';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { HomeComponent } from './Pages/home/home.component';
 import { HeroComponent } from './Components/hero/hero.component';
+import { WhyComponent } from './Components/why/why.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { HeroComponent } from './Components/hero/hero.component';
     SummaryPipe,
     NavbarComponent,
     HomeComponent,
-    HeroComponent
+    HeroComponent,
+    WhyComponent
   ],
   imports: [
     BrowserModule,
