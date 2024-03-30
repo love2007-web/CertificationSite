@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatButtonModule} from '@angular/material/button';
+import {MatGridListModule} from '@angular/material/grid-list';
 import { SummaryPipe } from './summary.pipe';
 import {MatCardModule} from '@angular/material/card';
 import { NavbarComponent } from './Components/navbar/navbar.component';
@@ -31,6 +32,7 @@ import { WhyComponent } from './Components/why/why.component';
     MatSlideToggleModule,
     MatButtonModule,
     MatCardModule,
+    MatGridListModule
   ],
   providers: [
     provideAnimationsAsync()
