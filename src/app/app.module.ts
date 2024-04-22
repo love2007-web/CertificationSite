@@ -14,6 +14,7 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { HomeComponent } from './Pages/home/home.component';
 import { HeroComponent } from './Components/hero/hero.component';
 import { WhyComponent } from './Components/why/why.component';
+import { SignupComponent } from './Pages/signup/signup.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { WhyComponent } from './Components/why/why.component';
     NavbarComponent,
     HomeComponent,
     HeroComponent,
-    WhyComponent
+    WhyComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
