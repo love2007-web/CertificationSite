@@ -15,6 +15,7 @@ import { HomeComponent } from './Pages/home/home.component';
 import { HeroComponent } from './Components/hero/hero.component';
 import { WhyComponent } from './Components/why/why.component';
 import { SignupComponent } from './Pages/signup/signup.component';
+import { UserSignupComponent } from './Pages/user-signup/user-signup.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { SignupComponent } from './Pages/signup/signup.component';
     HomeComponent,
     HeroComponent,
     WhyComponent,
-    SignupComponent
+    SignupComponent,
+    UserSignupComponent
   ],
   imports: [
     BrowserModule,
