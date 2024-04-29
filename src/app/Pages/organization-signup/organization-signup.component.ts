@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { SignupService } from '../../Services/signup.service';
 
 @Component({
-  selector: 'app-user-signup',
-  templateUrl: './user-signup.component.html',
-  styleUrl: './user-signup.component.css',
+  selector: 'app-organization-signup',
+  templateUrl: './organization-signup.component.html',
+  styleUrl: './organization-signup.component.css'
 })
-export class UserSignupComponent {
+export class OrganizationSignupComponent {
   public FirstName = '';
   public LastName = '';
   public Email = '';

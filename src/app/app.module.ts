@@ -16,6 +16,8 @@ import { HeroComponent } from './Components/hero/hero.component';
 import { WhyComponent } from './Components/why/why.component';
 import { SignupComponent } from './Pages/signup/signup.component';
 import { UserSignupComponent } from './Pages/user-signup/user-signup.component';
+import { HttpClientModule } from '@angular/common/http';
+import { OrganizationSignupComponent } from './Pages/organization-signup/organization-signup.component';
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { UserSignupComponent } from './Pages/user-signup/user-signup.component';
     HeroComponent,
     WhyComponent,
     SignupComponent,
-    UserSignupComponent
+    UserSignupComponent,
+    OrganizationSignupComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import { UserSignupComponent } from './Pages/user-signup/user-signup.component';
     MatSlideToggleModule,
     MatButtonModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    HttpClientModule
   ],
   providers: [
     provideAnimationsAsync()
