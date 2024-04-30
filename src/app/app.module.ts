@@ -18,6 +18,10 @@ import { SignupComponent } from './Pages/signup/signup.component';
 import { UserSignupComponent } from './Pages/user-signup/user-signup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { OrganizationSignupComponent } from './Pages/organization-signup/organization-signup.component';
+import {MatInputModule} from '@angular/material/input';
+import {ErrorStateMatcher} from '@angular/material/core';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 
 
 @NgModule({
@@ -40,7 +44,9 @@ import { OrganizationSignupComponent } from './Pages/organization-signup/organiz
     MatButtonModule,
     MatCardModule,
     MatGridListModule,
-    HttpClientModule
+    HttpClientModule,
+    MatInputModule,
+    MatFormFieldModule,
   ],
   providers: [
     provideAnimationsAsync()

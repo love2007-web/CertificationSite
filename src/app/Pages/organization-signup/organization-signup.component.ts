@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SignupService } from '../../Services/signup.service';
 
+
 @Component({
   selector: 'app-organization-signup',
   templateUrl: './organization-signup.component.html',
