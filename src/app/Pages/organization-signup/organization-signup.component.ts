@@ -8,20 +8,22 @@ import { SignupService } from '../../Services/signup.service';
   styleUrl: './organization-signup.component.css'
 })
 export class OrganizationSignupComponent {
-  public FirstName = '';
-  public LastName = '';
+  public Name = '';
+  public Website = '';
   public Email = '';
   public Password = '';
   public ConfirmPassword = '';
+  public Country = '';
   constructor(private signUp: SignupService) {}
 
   submitFrom() {
     let data = {
-      FirstName: this.FirstName,
-      LastName: this.LastName,
+      FirstName: this.Name,
+      Website: this.Website,
       Email: this.Email,
       Password: this.Password,
       ConfirmPassword: this.ConfirmPassword,
+      Country: this.Country,
     };
     console.log(data);
 

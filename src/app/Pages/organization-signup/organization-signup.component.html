@@ -21,8 +21,8 @@
             type="email"
             class="w-full h-10 border-2 border-purple-500 rounded-md pl-3 mt-[10px] focus:outline-none focus:ring focus:border-blue-500"
             placeholder="Enter your Organization Name"
-            [(ngModel)]="FirstName"
-            name="FirstName"
+            [(ngModel)]="Name"
+            name="Name"
           />
         </div>
         <div class="my-2">
@@ -30,7 +30,7 @@
             type="email"
             class="w-full h-10 border-2 border-purple-500 rounded-md pl-3 mt-[10px] focus:outline-none focus:ring focus:border-blue-500"
             placeholder="Enter your Organization Website"
-            [(ngModel)]="LastName"
+            [(ngModel)]="Website"
             name="Website"
           />
         </div>
@@ -66,8 +66,9 @@
             title="country"
             class="w-full h-10 border-2 border-purple-500 rounded-md pl-3 mt-[10px] focus:outline-none focus:ring focus:border-blue-500"
             placeholder="Confirm your Password"
-          > Select your Industry
-            <option value="1">Select your Industry</option>
+            [(ngModel)]="Country"
+          > Select your Country
+            <option value="1">Select your Country</option>
             <option value="2">Option 1</option>
             <option value="3">Option 2</option>
             <option value="4">Option 3</option>
