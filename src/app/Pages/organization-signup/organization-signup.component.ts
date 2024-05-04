@@ -1,33 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SignupService } from '../../Services/signup.service';
-
 
 @Component({
   selector: 'app-organization-signup',
   templateUrl: './organization-signup.component.html',
-  styleUrl: './organization-signup.component.css'
+  styleUrl: './organization-signup.component.css',
 })
-export class OrganizationSignupComponent {
+export class OrganizationSignupComponent implements OnInit {
   public Name = '';
   public Website = '';
   public Email = '';
   public Password = '';
   public ConfirmPassword = '';
   public Country = '';
+  public countries: any[] = [];
   constructor(private signUp: SignupService) {}
 
   submitFrom() {
     let data = {
-      FirstName: this.Name,
+      CompanyName: this.Name,
       Website: this.Website,
       Email: this.Email,
       Password: this.Password,
       ConfirmPassword: this.ConfirmPassword,
-      Country: this.Country,
+      Location: this.Country,
     };
     console.log(data);
 
-    this.signUp.postData(data).subscribe(
+    this.signUp.oganizationSignUp(data).subscribe(
       (response) => {
         console.log(response);
       },
@@ -35,5 +35,14 @@ export class OrganizationSignupComponent {
         console.log(error);
       }
     );
+  }
+  ngOnInit(): void {
+    this.signUp.getCountries().subscribe((data: any[]) => {
+      data.sort((a: any, b: any) => a.name.common.localeCompare(b.name.common));
+
+      data.forEach((item: any) => {
+        this.countries.push(item.name.common);
+      });        
+    });
   }
 }
