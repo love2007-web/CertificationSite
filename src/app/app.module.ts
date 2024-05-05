@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,7 +24,12 @@ import { OrganizationSignupComponent } from './Pages/organization-signup/organiz
 import {MatInputModule} from '@angular/material/input';
 import {ErrorStateMatcher} from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
-
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { ToastModule } from 'primeng/toast';
+import { RippleModule } from 'primeng/ripple';
+import { MessageService } from 'primeng/api';
 
 
 @NgModule({
@@ -48,9 +55,14 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     HttpClientModule,
     MatInputModule,
     MatFormFieldModule,
+    ButtonModule,
+    BrowserAnimationsModule,
+    ToastModule,
+    RippleModule,
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    MessageService
   ],
   bootstrap: [AppComponent]
 })
