@@ -77,16 +77,24 @@
           (click)="submitFrom()"
           class="w-full mt-6 bg-purple-600 py-3 rounded-full"
         >
-          Sign Up
-        </button>
-
-        <p class="text-center">
-          Already have an account?
-          <span>
-            <a href="/login" class="text-purple-500">Login</a>
-          </span>
-        </p>
-      </form>
-    </div>
+        Sign Up
+      </button>
+      
+      <p class="text-center">
+        Already have an account?
+        <span>
+          <a href="/user_login" class="text-purple-500">Login</a>
+        </span>
+      </p>
+    </form>
   </div>
 </div>
+</div>
+
+<app-loader *ngIf="isLoading"></app-loader>
+<p-toast
+      [breakpoints]="{
+        '920px': { width: '100%', right: '0', left: '0' }
+      }"
+      [life]="5000"
+    />

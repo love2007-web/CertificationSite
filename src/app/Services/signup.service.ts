@@ -26,4 +26,7 @@ export class SignupService {
   organizationLogin(data: any){
     return this.http.post(this.baseURL + "Api/user/companylogin", data);
   }
+  userLogin(data: any){
+    return this.http.post(this.baseURL + "Api/user/login", data);
+  }
 }

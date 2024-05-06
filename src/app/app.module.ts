@@ -38,6 +38,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
 import { PasswordModule } from 'primeng/password';
+import { UserLoginComponent } from './Pages/user-login/user-login.component';
+import { LoaderComponent } from './Components/loader/loader.component';
 
 
 @NgModule({
@@ -51,7 +53,9 @@ import { PasswordModule } from 'primeng/password';
     SignupComponent,
     UserSignupComponent,
     OrganizationSignupComponent,
-    OrganizationLoginComponent
+    OrganizationLoginComponent,
+    UserLoginComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

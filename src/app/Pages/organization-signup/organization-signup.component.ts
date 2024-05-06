@@ -17,6 +17,7 @@ export class OrganizationSignupComponent implements OnInit {
   public ConfirmPassword = '';
   public Country = '';
   public countries: any[] = [];
+  public isLoading = false;
   constructor(private signUp: SignupService, private messageService: MessageService, private primengConfig: PrimeNGConfig) 
 {}
   show() {
@@ -28,6 +29,7 @@ export class OrganizationSignupComponent implements OnInit {
  public buttonDisabled = false;
 
   submitFrom() {
+    this.isLoading = true;
     let data = {
       CompanyName: this.Name,
       Website: this.Website,
@@ -40,7 +42,7 @@ export class OrganizationSignupComponent implements OnInit {
 
     this.signUp.oganizationSignUp(data).subscribe(
       (response: any) => {
-        this.buttonDisabled = true;
+        this.isLoading = false;
         console.log(response.message);
         this.messageService.add({ severity: 'success', summary: 'Sign Up Successful', detail: response.message });
         setTimeout(() => {
@@ -48,6 +50,7 @@ export class OrganizationSignupComponent implements OnInit {
         }, 2000);
       },
       (error) => {
+        this.isLoading = false;
         console.log(error);
         this.messageService.add({ severity: 'error', summary: 'Sign Up Failed', detail: error.error.message});
       }
