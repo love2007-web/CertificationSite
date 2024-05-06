@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="pt-28 md:w-1/2 h-screen md:pt-12 md:px-28">
-      <span class="text-[27px] md:text-[40px] text-purple-500">Sign Up</span>
+      <span class="text-[25px] md:text-[30px] text-purple-500">Register your Organization</span>
       <form action="">
         <div class="my-2">
           <input
@@ -77,10 +77,23 @@
         </div>
         <button
           (click)="submitFrom()"
-          class="w-full mt-6 b  g-purple-600 py-3 rounded-full"
+          class="w-full mt-6 bg-purple-600 py-3 rounded-full"
         >
+          <p-toast
+            [breakpoints]="{
+              '920px': { width: '100%', right: '0', left: '0' }
+            }"
+            [life]="5000"
+          />
           Sign Up
         </button>
+
+        <p class="text-center">
+          Already have an account?
+          <span>
+            <a href="/organization_login" class="text-purple-500">Login</a>
+          </span>
+        </p>
       </form>
     </div>
   </div>

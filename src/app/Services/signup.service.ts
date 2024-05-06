@@ -22,4 +22,8 @@ export class SignupService {
   getCountries(): Observable<any> {
     return this.http.get('https://restcountries.com/v3.1/all');
   }
+  
+  organizationLogin(data: any){
+    return this.http.post(this.baseURL + "Api/user/companylogin", data);
+  }
 }

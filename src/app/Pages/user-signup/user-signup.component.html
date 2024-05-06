@@ -1,6 +1,6 @@
 <div class="font-poppins bg-purple-200 px-5">
-  <div class="md:w-full md:h-screen md:flex">
-    <div class="hidden md:block md:w-1/2 md:h-screen md:pt-12">
+  <div class="md:w-full md:h-full md:flex">
+    <div class="hidden md:block md:w-1/2 md:h-full md:pt-12">
       <img
         src="../../../assets/images/loginImage.6b7f94c1.png"
         class="mx-auto md:w-[300px]"
@@ -13,7 +13,7 @@
         </span>
       </div>
     </div>
-    <div class="pt-28 md:w-1/2 h-screen md:pt-12 md:px-28">
+    <div class="pt-28 h-screen md:w-1/2 md:h-full md:pt-12 md:px-28">
       <span class="text-[27px] md:text-[40px] text-purple-500"
         >Reinforce your brand</span
       >
@@ -73,9 +73,19 @@
             name="ConfirmPassword"
           />
         </div>
-        <button (click)="submitFrom()" class="w-full mt-6 bg-purple-600 py-3 rounded-full">
+        <button
+          (click)="submitFrom()"
+          class="w-full mt-6 bg-purple-600 py-3 rounded-full"
+        >
           Sign Up
         </button>
+
+        <p class="text-center">
+          Already have an account?
+          <span>
+            <a href="/login" class="text-purple-500">Login</a>
+          </span>
+        </p>
       </form>
     </div>
   </div>

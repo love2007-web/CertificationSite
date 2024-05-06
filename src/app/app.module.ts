@@ -32,6 +32,12 @@ import { RippleModule } from 'primeng/ripple';
 import { MessageService } from 'primeng/api';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import { OrganizationLoginComponent } from './Pages/organization-login/organization-login.component';
+import { InputGroupModule } from 'primeng/inputgroup';
+import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
+import { InputTextModule } from 'primeng/inputtext';
+import { IconFieldModule } from 'primeng/iconfield';
+import { InputIconModule } from 'primeng/inputicon';
+import { PasswordModule } from 'primeng/password';
 
 
 @NgModule({
@@ -63,6 +69,12 @@ import { OrganizationLoginComponent } from './Pages/organization-login/organizat
     ToastModule,
     RippleModule,
     SplitButtonModule,
+    InputGroupAddonModule,
+    InputGroupModule,
+    InputTextModule,
+    IconFieldModule,
+    InputIconModule,
+    PasswordModule
   ],
   providers: [
     provideAnimationsAsync(),
