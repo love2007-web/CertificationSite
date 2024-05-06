@@ -4,6 +4,7 @@ import { HomeComponent } from './Pages/home/home.component';
 import { SignupComponent } from './Pages/signup/signup.component';
 import { UserSignupComponent } from './Pages/user-signup/user-signup.component';
 import { OrganizationSignupComponent } from './Pages/organization-signup/organization-signup.component';
+import { OrganizationLoginComponent } from './Pages/organization-login/organization-login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'user_signup', component: UserSignupComponent },
   { path: 'organization_signup', component: OrganizationSignupComponent },
+  { path: 'organization_login', component: OrganizationLoginComponent },
 
 
 ];

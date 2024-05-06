@@ -1,4 +1,5 @@
 /* @import "~bootstrap/dist/css/bootstrap.css"; */
+@import "primeicons/primeicons.css";
 @layer tailwind-base, primeng, tailwind-utilities;
         
 @layer tailwind-base {
@@ -8,4 +9,15 @@
 @layer tailwind-utilities {
     @tailwind components;
     @tailwind utilities;
+}
+
+/* Order */
+@layer reset, primeng;
+
+/* Reset CSS */
+@layer reset {
+    button,
+    input {
+        /* CSS to Reset */
+    }
 }

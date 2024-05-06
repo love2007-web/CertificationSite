@@ -30,6 +30,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { ToastModule } from 'primeng/toast';
 import { RippleModule } from 'primeng/ripple';
 import { MessageService } from 'primeng/api';
+import { SplitButtonModule } from 'primeng/splitbutton';
+import { OrganizationLoginComponent } from './Pages/organization-login/organization-login.component';
 
 
 @NgModule({
@@ -42,10 +44,12 @@ import { MessageService } from 'primeng/api';
     WhyComponent,
     SignupComponent,
     UserSignupComponent,
-    OrganizationSignupComponent
+    OrganizationSignupComponent,
+    OrganizationLoginComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
     MatSlideToggleModule,
@@ -56,9 +60,9 @@ import { MessageService } from 'primeng/api';
     MatInputModule,
     MatFormFieldModule,
     ButtonModule,
-    BrowserAnimationsModule,
     ToastModule,
     RippleModule,
+    SplitButtonModule,
   ],
   providers: [
     provideAnimationsAsync(),

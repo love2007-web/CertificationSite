@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SignupService } from '../../Services/signup.service';
-import { MessageService } from 'primeng/api';
+import { MessageService, MenuItem } from 'primeng/api';
+import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
   selector: 'app-organization-signup',
@@ -8,6 +9,7 @@ import { MessageService } from 'primeng/api';
   styleUrl: './organization-signup.component.css',
 })
 export class OrganizationSignupComponent implements OnInit {
+  items: MenuItem[] = [];
   public Name = '';
   public Website = '';
   public Email = '';
@@ -15,7 +17,15 @@ export class OrganizationSignupComponent implements OnInit {
   public ConfirmPassword = '';
   public Country = '';
   public countries: any[] = [];
-  constructor(private signUp: SignupService, private messageService: MessageService) {}
+  constructor(private signUp: SignupService, private messageService: MessageService, private primengConfig: PrimeNGConfig) 
+{}
+  show() {
+    this.primengConfig.ripple = true;
+    this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Message Content' });
+  }
+
+
+ public buttonDisabled = false;
 
   submitFrom() {
     let data = {
@@ -29,13 +39,17 @@ export class OrganizationSignupComponent implements OnInit {
     console.log(data);
 
     this.signUp.oganizationSignUp(data).subscribe(
-      (response) => {
-        console.log(response);
-        this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Message Content' });
+      (response: any) => {
+        this.buttonDisabled = true;
+        console.log(response.message);
+        this.messageService.add({ severity: 'success', summary: 'Sign Up Successful', detail: response.message });
+        setTimeout(() => {
+          window.location.href = '/organization_login';
+        }, 2000);
       },
       (error) => {
         console.log(error);
-        this.messageService.add({ severity: 'error', summary: 'Success', detail: 'Message Content' });
+        this.messageService.add({ severity: 'error', summary: 'Sign Up Failed', detail: error.error.message});
       }
     );
   }
