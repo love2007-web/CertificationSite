@@ -7,8 +7,8 @@ import { OrganizationSignupComponent } from './Pages/organization-signup/organiz
 import { OrganizationLoginComponent } from './Pages/organization-login/organization-login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  // { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', component: HomeComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'user_signup', component: UserSignupComponent },
   { path: 'organization_signup', component: OrganizationSignupComponent },
