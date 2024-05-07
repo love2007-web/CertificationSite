@@ -27,6 +27,7 @@ export class OrganizationLoginComponent {
       (response: any) => {
         console.log(response);
         this.messageService.add({ severity: 'success', summary: 'Login Successful', detail: response.message });
+        window.location.href = '/organization-dashboard';
       },
       (error) => {
         console.log(error);

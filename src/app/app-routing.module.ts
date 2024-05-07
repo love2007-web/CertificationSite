@@ -6,6 +6,7 @@ import { UserSignupComponent } from './Pages/user-signup/user-signup.component';
 import { OrganizationSignupComponent } from './Pages/organization-signup/organization-signup.component';
 import { OrganizationLoginComponent } from './Pages/organization-login/organization-login.component';
 import { UserLoginComponent } from './Pages/user-login/user-login.component';
+import { OrganizationDashboardComponent } from './Pages/organization-dashboard/organization-dashboard.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,8 @@ const routes: Routes = [
   { path: 'organization_signup', component: OrganizationSignupComponent },
   { path: 'organization_login', component: OrganizationLoginComponent },
   { path: 'user_login', component: UserLoginComponent },
+  { path: 'organization_dashboard', component: OrganizationDashboardComponent },
+
 
 
 ];
