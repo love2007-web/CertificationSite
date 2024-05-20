@@ -41,6 +41,7 @@ import { PasswordModule } from 'primeng/password';
 import { UserLoginComponent } from './Pages/user-login/user-login.component';
 import { LoaderComponent } from './Components/loader/loader.component';
 import { OrganizationDashboardComponent } from './Pages/organization-dashboard/organization-dashboard.component';
+import { LoginComponent } from './Pages/login/login.component';
 
 
 @NgModule({
@@ -57,7 +58,8 @@ import { OrganizationDashboardComponent } from './Pages/organization-dashboard/o
     OrganizationLoginComponent,
     UserLoginComponent,
     LoaderComponent,
-    OrganizationDashboardComponent
+    OrganizationDashboardComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

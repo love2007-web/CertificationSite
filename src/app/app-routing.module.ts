@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+  import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './Pages/home/home.component';
 import { SignupComponent } from './Pages/signup/signup.component';
@@ -7,12 +7,14 @@ import { OrganizationSignupComponent } from './Pages/organization-signup/organiz
 import { OrganizationLoginComponent } from './Pages/organization-login/organization-login.component';
 import { UserLoginComponent } from './Pages/user-login/user-login.component';
 import { OrganizationDashboardComponent } from './Pages/organization-dashboard/organization-dashboard.component';
+import { LoginComponent } from './Pages/login/login.component';
 
 
 const routes: Routes = [
   // { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '', component: HomeComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'user_signup', component: UserSignupComponent },
   { path: 'organization_signup', component: OrganizationSignupComponent },
   { path: 'organization_login', component: OrganizationLoginComponent },
