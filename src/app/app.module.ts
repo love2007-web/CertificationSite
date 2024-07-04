@@ -42,6 +42,7 @@ import { UserLoginComponent } from './Pages/user-login/user-login.component';
 import { LoaderComponent } from './Components/loader/loader.component';
 import { OrganizationDashboardComponent } from './Pages/organization-dashboard/organization-dashboard.component';
 import { LoginComponent } from './Pages/login/login.component';
+import { UserDashboardComponent } from './Pages/user-dashboard/user-dashboard.component';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { LoginComponent } from './Pages/login/login.component';
     UserLoginComponent,
     LoaderComponent,
     OrganizationDashboardComponent,
-    LoginComponent
+    LoginComponent,
+    UserDashboardComponent
   ],
   imports: [
     BrowserModule,
