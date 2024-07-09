@@ -43,6 +43,7 @@ import { LoaderComponent } from './Components/loader/loader.component';
 import { OrganizationDashboardComponent } from './Pages/organization-dashboard/organization-dashboard.component';
 import { LoginComponent } from './Pages/login/login.component';
 import { UserDashboardComponent } from './Pages/user-dashboard/user-dashboard.component';
+import { OrgNavComponent } from './Components/org-nav/org-nav.component';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { UserDashboardComponent } from './Pages/user-dashboard/user-dashboard.co
     LoaderComponent,
     OrganizationDashboardComponent,
     LoginComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    OrgNavComponent
   ],
   imports: [
     BrowserModule,
