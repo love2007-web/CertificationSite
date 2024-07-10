@@ -1,9 +1,29 @@
-<div class="bg-violet-800 font-poppins">
-    <div>
-        <p class="text-2xl font-semibold text-white tracking-normal">Dashboard</p>
-    </div>
-    <div>
-        
-    </div>
+<div class="bg-violet-800 font-poppins flex justify-between p-2">
+  <div class="flex items-start text-center">
+    <button>
+      <mat-icon
+        fontIcon="menu"
+        style="color: white; font-size: 2rem"
+        class="mr-4"
+      ></mat-icon>
+    </button>
+    <p class="text-2xl font-semibold text-white tracking-normal">Dashboard</p>
+  </div>
+  <div>
+    <button [matMenuTriggerFor]="belowMenu">
+      <p-avatar icon="pi pi-user" styleClass="mr-2" size="large" />
+    </button>
+    <mat-menu #belowMenu="matMenu" yPosition="below" xPosition="before">
+      <button mat-menu-item class="flex">
+        <!-- <i class="pi pi-user mr-2" style="font-size: 1rem" style="color: purple;"></i> -->
+        <mat-icon fontIcon="person" style="color: #5b21b6"></mat-icon>
+        <span>Profile</span>
+      </button>
+      <button mat-menu-item class="flex">
+        <!-- <i class="pi pi-user mr-2" style="font-size: 1rem" style="color: purple;"></i> -->
+        <mat-icon fontIcon="settings" style="color: #5b21b6"></mat-icon>
+        <span>Settings</span>
+      </button>
+    </mat-menu>
+  </div>
 </div>
-  

@@ -25,7 +25,7 @@ import {MatInputModule} from '@angular/material/input';
 import {ErrorStateMatcher} from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { MatIconModule } from '@angular/material/icon';
+import { MatIcon, MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { ToastModule } from 'primeng/toast';
 import { RippleModule } from 'primeng/ripple';
@@ -44,7 +44,10 @@ import { OrganizationDashboardComponent } from './Pages/organization-dashboard/o
 import { LoginComponent } from './Pages/login/login.component';
 import { UserDashboardComponent } from './Pages/user-dashboard/user-dashboard.component';
 import { OrgNavComponent } from './Components/org-nav/org-nav.component';
-
+import { AvatarModule } from 'primeng/avatar';
+import { AvatarGroupModule } from 'primeng/avatargroup';
+import {MatMenuModule} from '@angular/material/menu';
+import { SideNavComponent } from './Components/side-nav/side-nav.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +66,8 @@ import { OrgNavComponent } from './Components/org-nav/org-nav.component';
     OrganizationDashboardComponent,
     LoginComponent,
     UserDashboardComponent,
-    OrgNavComponent
+    OrgNavComponent,
+    SideNavComponent
   ],
   imports: [
     BrowserModule,
@@ -86,7 +90,11 @@ import { OrgNavComponent } from './Components/org-nav/org-nav.component';
     InputTextModule,
     IconFieldModule,
     InputIconModule,
-    PasswordModule
+    PasswordModule,
+    AvatarModule,
+    AvatarGroupModule,
+    MatMenuModule,
+    MatIconModule
   ],
   providers: [
     provideAnimationsAsync(),
