@@ -1,4 +1,4 @@
 <div class="flex">
-    <app-side-nav class="w-72"></app-side-nav>
+    <app-side-nav [ngClass]="{'w-72': isExpanded, 'w-20': !isExpanded}" class="transition-all duration-300"></app-side-nav>
     <app-org-nav class="w-screen nav"></app-org-nav>
-</div>
+  </div>

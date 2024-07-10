@@ -48,6 +48,7 @@ import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
 import {MatMenuModule} from '@angular/material/menu';
 import { SideNavComponent } from './Components/side-nav/side-nav.component';
+import { SidebarService } from './Services/signup.service';
 
 @NgModule({
   declarations: [
@@ -98,7 +99,8 @@ import { SideNavComponent } from './Components/side-nav/side-nav.component';
   ],
   providers: [
     provideAnimationsAsync(),
-    MessageService
+    MessageService,
+    SidebarService
   ],
   bootstrap: [AppComponent]
 })

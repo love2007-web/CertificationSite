@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SidebarService } from '../../Services/signup.service';
 
 @Component({
   selector: 'app-org-nav',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './org-nav.component.css'
 })
 export class OrgNavComponent {
+  constructor(private sidebarService: SidebarService) {}
 
+  toggleSidebar() {
+    this.sidebarService.toggle();
+  }
 }
