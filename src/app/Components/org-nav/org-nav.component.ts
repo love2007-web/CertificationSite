@@ -7,7 +7,13 @@ import { SidebarService } from '../../Services/signup.service';
   styleUrl: './org-nav.component.css'
 })
 export class OrgNavComponent {
-  constructor(private sidebarService: SidebarService) {}
+  isExpanded: boolean = true;
+
+  constructor(private sidebarService: SidebarService) {
+    this.sidebarService.isExpanded$.subscribe(isExpanded => {
+      this.isExpanded = isExpanded;
+    });
+  }
 
   toggleSidebar() {
     this.sidebarService.toggle();

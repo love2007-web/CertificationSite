@@ -2,7 +2,7 @@
   <div class="flex items-start text-center">
     <button (click)="toggleSidebar()">
       <mat-icon
-        fontIcon="menu"
+      [fontIcon]="isExpanded ? 'close' : 'menu'"
         style="color: white; font-size: 2rem"
         class="mr-4"
       ></mat-icon>
