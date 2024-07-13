@@ -1,7 +1,7 @@
-<div class="bg bg-red-600 w-full h-screen">
+<div class="bg-red-600 w-full h-screen flex justify-center">
     <ul class="menu-list">
-      <li class="menu-item" *ngFor="let item of menuItems">
-        <mat-icon>{{ item.icon }}</mat-icon>
+      <li class="menu-item flex items-center p-[10px]" *ngFor="let item of menuItems">
+        <mat-icon class="mr-[10px]">{{ item.icon }}</mat-icon>
         <span *ngIf="isExpanded">{{ item.text }}</span>
       </li>
     </ul>
