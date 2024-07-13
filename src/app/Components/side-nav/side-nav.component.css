@@ -1,0 +1,16 @@
+/* side-nav.component.css */
+.menu-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .menu-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .menu-item mat-icon {
+    margin-right: 10px;
+  }
+  
