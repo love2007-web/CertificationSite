@@ -1,0 +1,36 @@
+.navbar {
+	background-color: transparent !important;
+	padding: 1.5% 2%;
+}
+
+.nav-logo {
+	object-fit: contain !important;
+}
+
+.nav-menu {
+	display: flex;
+	width: 100%;
+	justify-content: flex-end !important;
+}
+
+.nav-links {
+	display: flex !important;
+	list-style: none;
+	width: 100%;
+	justify-content: flex-end;
+}
+
+.nav-links li {
+	padding: 0 2% !important;
+}
+
+.nav-links li a {
+	text-decoration: none;
+	color: white;
+	font-size: 1.1rem;
+	transition: ease-in 0.2s;
+}
+
+.nav-links li a:hover {
+	color: #5757ff;
+}

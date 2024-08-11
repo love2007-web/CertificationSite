@@ -1,0 +1,48 @@
+.landing-page {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://certify.jugaldb.com/assets/background1.jpg");
+	background-size: cover;
+}
+
+.landing-page .MuiGrid-root {
+	flex: 1 !important;
+	padding-left: 2% !important;
+}
+
+.jumbo-div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100%;
+}
+
+.sub-jumbo-text {
+	font-size: 1.5rem !important;
+	font-weight: 500 !important;
+	letter-spacing: 1.5px;
+	margin-bottom: 10px;
+}
+
+.jumbo-text {
+	font-size: 3.2rem;
+	font-weight: 900;
+	margin-top: 0 !important;
+}
+
+.jumbo-btn-div {
+	margin-top: 5%;
+	width: 100%;
+	display: flex;
+	align-items: flex-start;
+}
+
+@media screen and (max-width: 960px) {
+	.jumbo-text {
+		font-size: 2.5rem !important;
+	}
+	.sub-jumbo-text {
+		font-size: 1rem !important;
+	}
+}

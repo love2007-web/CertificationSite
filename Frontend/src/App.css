@@ -1,0 +1,11 @@
+.MuiTypography-root {
+  font-family: "Inter", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.secondary-color {
+  color: #5757ff;
+}
