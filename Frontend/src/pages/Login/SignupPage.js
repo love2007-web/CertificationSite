@@ -1,7 +1,6 @@
 import {
   Container,
   Typography,
-  Button,
   InputAdornment,
   IconButton,
   CircularProgress,
@@ -53,11 +52,15 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
   
 	const handleEmailChange = (event) => {
 	  setEmailChanged(true);
+	  console.log(emailChanged);
+	  
 	  changeEmail(event.target.value);
 	};
   
 	const handlePasswordChange = (event) => {
 	  setPasswordChanged(true);
+	  console.log(passwordChanged);
+	  
 	  changePassword(event.target.value);
 	};
   

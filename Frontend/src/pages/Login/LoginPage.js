@@ -45,11 +45,15 @@ function LoginPage() {
 
 	const handleEmailChange = (event) => {
 		setEmailChanged(true);
+		console.log(emailChanged);
+		
 		changeEmail(event.target.value);
 	};
 
 	const handlePasswordChange = (event) => {
 		setPasswordChanged(true);
+		console.log(passwordChanged);
+		
 		changePassword(event.target.value);
 	};
 
