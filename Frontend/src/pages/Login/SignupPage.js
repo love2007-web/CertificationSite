@@ -22,28 +22,28 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
   
 	const [name, setName] = useState("");
 	const [email, changeEmail] = useState("");
-	const [emailError, setEmailError] = useState("");
+	// const [emailError, setEmailError] = useState("");
 	const [emailChanged, setEmailChanged] = useState(false);
 	const [password, changePassword] = useState("");
-	const [passwordError, setPasswordError] = useState("");
+	// const [passwordError, setPasswordError] = useState("");
 	const [passwordChanged, setPasswordChanged] = useState(false);
   
 	const [showPassword, setShowPassword] = useState(false);
   
-	const [errorText, setErrorText] = useState(
-	  "Error Logging In! Try again...."
-	);
+	// const [errorText, setErrorText] = useState(
+	//   "Error Logging In! Try again...."
+	// );
   
 	const navigate = useNavigate();
   
-	const [notVerified, setNotVerified] = useState(false);
-	const [verifyMail, setVerifyMail] = useState("");
+	// const [notVerified, setNotVerified] = useState(false);
+	// const [verifyMail, setVerifyMail] = useState("");
   
 	const [isLoading, setLoading] = useState(false);
 	const [success, setSuccess] = useState(false);
   
-	const mailErrorText = "Email cannot be empty";
-	const passwordErrorText = "Password cannot be empty";
+	// const mailErrorText = "Email cannot be empty";
+	// const passwordErrorText = "Password cannot be empty";
   
 	const backend = process.env.REACT_APP_BACKEND_URL;
   

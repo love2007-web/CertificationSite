@@ -1,6 +1,6 @@
-import Drawer  from "@mui/material/Drawer";
+import Drawer from "@mui/material/Drawer";
 import Axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react"; // Import useCallback
 import { useNavigate } from "react-router-dom";
 import DashNavbar from "../../components/DashNavbar/DashNavbar";
 import Sidebar from "../../components/Sidebar/Sidebar";
@@ -16,18 +16,16 @@ function Dashboard() {
 	const navigate = useNavigate();
 
 	const [name, setName] = useState("");
-
 	const [certEvents, setCertEvents] = useState([]);
 	const [createdEvents, setCreatedEvents] = useState([]);
-
 	const [openDash, setOpenDash] = useState(1);
-
 	const [drawerOpen, setDrawerOpen] = useState(false);
 	const drawerWidth = 256;
 
 	const backend = process.env.REACT_APP_BACKEND_URL;
 
-	const getCertificates = async () => {
+	// Wrap getCertificates in useCallback
+	const getCertificates = useCallback(async () => {
 		let url = `${backend}/user/events`;
 		let token = localStorage.getItem("authToken");
 
@@ -55,11 +53,11 @@ function Dashboard() {
 			console.log(certs);
 		} catch (error) {
 			console.log(error);
-			// You might want to handle the error here, like showing an error message.
+			// Handle error, if necessary
 		} finally {
 			setLoading(false);
 		}
-	};
+	}, [backend]); // Add backend to the dependency array
 
 	useEffect(() => {
 		const token = localStorage.getItem("authToken");
@@ -70,7 +68,7 @@ function Dashboard() {
 		} else {
 			setLoggedIn(false);
 		}
-	}, []);
+	}, [getCertificates]); // Add getCertificates as a dependency
 
 	useEffect(() => {
 		if (refresh) getCertificates();
@@ -82,7 +80,7 @@ function Dashboard() {
 
 	if (!isLoggedIn) {
 		navigate("/");
-		return null; // Return null to prevent rendering anything else
+		return null; // Prevent rendering if not logged in
 	}
 
 	return (

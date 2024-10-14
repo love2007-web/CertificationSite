@@ -1,9 +1,17 @@
-import { CircularProgress, Container, Dialog, Divider, List, ListItem, ListItemText } from "@mui/material";
+import {
+  CircularProgress,
+  Container,
+  Dialog,
+  Divider,
+  List,
+  ListItem,
+  ListItemText,
+} from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import GetAppIcon from "@mui/icons-material/GetApp";
 import Axios from "axios";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 import ActionButton from "../../components/ActionButton/ActionButton";
 import DashNavbar from "../../components/DashNavbar/DashNavbar";
 import Loading from "../Loading/Loading";
@@ -83,7 +91,8 @@ function EventPage() {
     }
   };
 
-  const getDetails = async () => {
+  // Memoize getDetails using useCallback
+  const getDetails = useCallback(async () => {
     let url = `${backend}/event/${id}`;
 
     try {
@@ -94,11 +103,11 @@ function EventPage() {
     } catch (error) {
       console.log(error);
     }
-  };
+  }, [backend, id]);
 
   useEffect(() => {
     getDetails();
-  }, [id, getDetails]);
+  }, [getDetails]);
 
   if (loading) return <Loading />;
 

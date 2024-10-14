@@ -1,5 +1,5 @@
 import Axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 function ProfilePage() {
   const [loading, setLoading] = useState(true);
@@ -8,7 +8,7 @@ function ProfilePage() {
 
   const backend = process.env.REACT_APP_BACKEND_URL;
 
-  const getDetails = async () => {
+  const getDetails = useCallback(async () => {
     const url = `${backend}/user/me`;
     const token = localStorage.getItem("authToken");
 
@@ -25,7 +25,7 @@ function ProfilePage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [backend]);
 
   useEffect(() => {
     getDetails();

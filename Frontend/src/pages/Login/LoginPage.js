@@ -16,30 +16,30 @@ function LoginPage() {
 	const toast = useRef(null);
 
 	const [email, changeEmail] = useState("");
-	const [emailError, setEmailError] = useState("");
+	// const [emailError, setEmailError] = useState("");
 	const [emailChanged, setEmailChanged] = useState(false);
 	const [password, changePassword] = useState("");
-	const [passwordError, setPasswordError] = useState("");
+	// const [passwordError, setPasswordError] = useState("");
 	const [passwordChanged, setPasswordChanged] = useState(false);
 
 	const [showPassword, setShowPassword] = useState(false);
 
-	const [errorText, setErrorText] = useState(
-		"Error Logging In! Try again...."
-	);
-	const [redirect, setRedirect] = useState(false);
-	const [ownerRedirect, setOwnerRedirect] = useState(false);
-	const [loginRedirect, setLoginRedirect] = useState(false);
+	// const [errorText, setErrorText] = useState(
+	// 	"Error Logging In! Try again...."
+	// );
+	// const [redirect, setRedirect] = useState(false);
+	// const [ownerRedirect, setOwnerRedirect] = useState(false);
+	// const [loginRedirect, setLoginRedirect] = useState(false);
 
-	const [notVerified, setNotVerified] = useState(false);
-	const [verifyMail, setVerifyMail] = useState("");
+	// const [notVerified, setNotVerified] = useState(false);
+	// const [verifyMail, setVerifyMail] = useState("");
 	const navigate = useNavigate();
 
 	const [isLoading, setLoading] = useState(false);
 	const [success, setSuccess] = useState(false);
 
-	const mailErrorText = "Email cannot be empty";
-	const passwordErrorText = "Password cannot be empty";
+	// const mailErrorText = "Email cannot be empty";
+	// const passwordErrorText = "Password cannot be empty";
 
 	const backend = process.env.REACT_APP_BACKEND_URL;
 
