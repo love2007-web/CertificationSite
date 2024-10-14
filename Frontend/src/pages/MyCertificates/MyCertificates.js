@@ -1,4 +1,4 @@
-import { Grid } from "@material-ui/core";
+import  Grid  from "@mui/material/Grid";
 import React from "react";
 import EventItem from "../../components/EventItem/EventItem";
 import "./MyCertificates.css";

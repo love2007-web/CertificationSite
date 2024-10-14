@@ -1,4 +1,4 @@
-import { Grid } from "@material-ui/core";
+import { Grid } from "@mui/material";
 import React from "react";
 import "./ImageSelect.css";
 
@@ -14,7 +14,7 @@ function ImageSelect({ selected, setSelected, images }) {
             style={{
               border: selected === image.key ? "2px #5757ff solid" : null,
             }}
-			key={image.key}
+            key={image.key}
             onClick={() => setSelected(image.key)}
           >
             <img src={image.src} alt={image.name} className="img-preview" />

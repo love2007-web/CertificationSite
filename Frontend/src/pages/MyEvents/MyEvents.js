@@ -1,12 +1,6 @@
-import {
-	CircularProgress,
-	Dialog,
-	Fab,
-	Grid,
-	TextField,
-} from "@material-ui/core";
+import { CircularProgress, Dialog, Fab, Grid, TextField } from "@mui/material";
 import React, { useState, useRef } from "react";
-import { Add } from "@material-ui/icons";
+import AddIcon from "@mui/icons-material/Add";
 import "./MyEvents.css";
 import TextInput from "../../components/TextInput/TextInput";
 import ActionButton from "../../components/ActionButton/ActionButton";
@@ -114,7 +108,7 @@ function MyEvents({ events, setRefresh }) {
 				className="add-event-btn"
 				onClick={() => setEventModal(true)}
 			>
-				<Add />
+				<AddIcon />
 			</Fab>
 			<Dialog
 				open={eventModal}

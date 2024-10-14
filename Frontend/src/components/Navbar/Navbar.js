@@ -1,5 +1,6 @@
 import React from "react";
-import { AppBar, Toolbar } from "@material-ui/core";
+import { AppBar } from "@mui/material";
+import { Toolbar } from "@mui/material";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 

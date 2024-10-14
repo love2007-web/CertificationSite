@@ -1,5 +1,8 @@
-import { Avatar, Divider, List, ListItem } from "@material-ui/core";
-import { ArrowBack } from "@material-ui/icons";
+import Avatar  from "@mui/material/Avatar";
+import Divider from "@mui/material/Divider";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import React from "react";
 import ActionButton from "../ActionButton/ActionButton";
 import "./Sidebar.css";
@@ -57,7 +60,7 @@ function Sidebar({ name, openDash, setOpenDash, setLoggedIn }) {
 				</List>
 				<div style={{ textAlign: "center", width: "100%" }}>
 					<ActionButton onClick={handleLogout}>
-						<ArrowBack style={{ marginRight: "5px" }} />
+						<ArrowBackIcon style={{ marginRight: "5px" }} />
 						Logout
 					</ActionButton>
 				</div>

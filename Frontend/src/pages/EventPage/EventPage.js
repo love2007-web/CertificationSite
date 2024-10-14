@@ -1,13 +1,7 @@
-import {
-  CircularProgress,
-  Container,
-  Dialog,
-  Divider,
-  List,
-  ListItem,
-  ListItemText,
-} from "@material-ui/core";
-import { Add, AddCircle, GetApp } from "@material-ui/icons";
+import { CircularProgress, Container, Dialog, Divider, List, ListItem, ListItemText } from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
+import AddCircleIcon from "@mui/icons-material/AddCircle";
+import GetAppIcon from "@mui/icons-material/GetApp";
 import Axios from "axios";
 import React, { useEffect, useState, useRef } from "react";
 import ActionButton from "../../components/ActionButton/ActionButton";
@@ -139,7 +133,7 @@ function EventPage() {
             </h1>
             <div className="participant-btn-bar">
               <ActionButton onClick={() => setOpen(true)}>
-                Add Participant <Add />
+                Add Participant <AddIcon />
               </ActionButton>
             </div>
             <div className="participants-list">
@@ -169,7 +163,7 @@ function EventPage() {
                         download={true}
                         link={participant.certificate_link}
                       >
-                        <GetApp />
+                        <GetAppIcon />
                       </ActionButton>
                     </div>
                   ))}
@@ -208,7 +202,7 @@ function EventPage() {
                 <section>
                   <div {...getRootProps()}>
                     <input {...getInputProps()} />
-                    <AddCircle className="drop-icon" />
+                    <AddCircleIcon className="drop-icon" />
                     <p
                       style={{
                         color: "rgb(160, 160, 160)",

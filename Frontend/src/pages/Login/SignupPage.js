@@ -1,16 +1,17 @@
 import {
-	Container,
-	Typography,
-	Button,
-	InputAdornment,
-	IconButton,
-	CircularProgress,
-  } from "@material-ui/core";
+  Container,
+  Typography,
+  Button,
+  InputAdornment,
+  IconButton,
+  CircularProgress,
+} from "@mui/material";
   import React, { useRef, useState, useEffect } from "react";
   import { Link, useNavigate } from "react-router-dom";
   import TextInput from "../../components/TextInput/TextInput";
   import Navbar from "../../components/Navbar/Navbar";
-  import { Visibility, VisibilityOff } from "@material-ui/icons";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
   import ActionButton from "../../components/ActionButton/ActionButton";
   import axios from "axios";
   import { Toast } from 'primereact/toast';
@@ -151,7 +152,7 @@ import {
 					  edge="end"
 					  className="view-pass-icon"
 					>
-					  {showPassword ? <Visibility /> : <VisibilityOff />}
+					  {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
 					</IconButton>
 				  </InputAdornment>
 				),

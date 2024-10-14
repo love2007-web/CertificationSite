@@ -1,10 +1,10 @@
-import { Grid } from "@material-ui/core";
+import  Grid  from "@mui/material/Grid";
 import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import "./Landing.css";
 import ReactTypingEffect from "react-typing-effect";
 import ActionButton from "../../components/ActionButton/ActionButton";
-import { ArrowForward } from "@material-ui/icons";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Link } from "react-router-dom";
 
 function Landing() {
@@ -36,7 +36,7 @@ function Landing() {
 									<span style={{ marginRight: "10px" }}>
 										Start now
 									</span>
-									<ArrowForward />
+									<ArrowForwardIcon />
 								</ActionButton>
 							</Link>
 						</div>

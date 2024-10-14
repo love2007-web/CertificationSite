@@ -1,9 +1,14 @@
 //Copy of Navbar.js
 
 import React, { useState } from "react";
-import { AppBar, Avatar, IconButton, Toolbar } from "@material-ui/core";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Avatar from "@mui/material/Avatar";
 import "./DashNavbar.css";
-import { ArrowBack, Close, Menu } from "@material-ui/icons";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import CloseIcon from "@mui/icons-material/Close";
+import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
 
 function DashNavbar({ open, setOpen, back }) {
@@ -15,12 +20,12 @@ function DashNavbar({ open, setOpen, back }) {
 				{!back ? (
 					<IconButton edge="start" onClick={() => setOpen(!open)}>
 						{open ? (
-							<Close
+							<CloseIcon
 								className="nav-drawer-icon"
 								fontSize="large"
 							/>
 						) : (
-							<Menu
+							<MenuIcon
 								className="nav-drawer-icon"
 								fontSize="large"
 							/>
@@ -29,7 +34,7 @@ function DashNavbar({ open, setOpen, back }) {
 				) : (
 					<Link to="/dashboard">
 						<IconButton edge="start">
-							<ArrowBack className="nav-drawer-icon" />
+							<ArrowBackIcon className="nav-drawer-icon" />
 						</IconButton>
 					</Link>
 				)}
