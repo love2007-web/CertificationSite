@@ -74,7 +74,7 @@ function Dashboard() {
 
 	useEffect(() => {
 		if (refresh) getCertificates();
-	}, [refresh]);
+	}, [refresh, getCertificates]);
 
 	if (loading) {
 		return <Loading />;

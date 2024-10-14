@@ -98,7 +98,7 @@ function EventPage() {
 
   useEffect(() => {
     getDetails();
-  }, [id]);
+  }, [id, getDetails]);
 
   if (loading) return <Loading />;
 

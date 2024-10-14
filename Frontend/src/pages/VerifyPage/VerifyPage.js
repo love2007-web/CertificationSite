@@ -76,7 +76,7 @@ function VerifyPage() {
 			setLoading(false);
 			setRedirect(true);
 		}
-	}, [])
+	}, [getQueryParams])
 
 	if(loading) {
 		return <Loading />

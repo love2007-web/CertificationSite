@@ -29,7 +29,7 @@ function ProfilePage() {
 
   useEffect(() => {
     getDetails();
-  }, []);
+  }, [getDetails]);
 
   if (loading) {
     return <div>Loading...</div>;
