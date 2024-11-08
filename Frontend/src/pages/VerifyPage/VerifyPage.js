@@ -16,7 +16,7 @@ function VerifyPage() {
   const [details, setDetails] = useState(null);
   const navigate = useNavigate();
 
-  const backend = process.env.REACT_APP_BACKEND_URL;
+  const backend = "http://localhost:5000";
 
   // Move getCertificate above getQueryParams
   const getCertificate = useCallback(

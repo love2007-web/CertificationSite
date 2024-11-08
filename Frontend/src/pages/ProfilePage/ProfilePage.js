@@ -6,7 +6,7 @@ function ProfilePage() {
   const [details, setDetails] = useState(null);
   const [error, setError] = useState(null);
 
-  const backend = process.env.REACT_APP_BACKEND_URL;
+  const backend = "http://localhost:5000";
 
   const getDetails = useCallback(async () => {
     const url = `${backend}/user/me`;

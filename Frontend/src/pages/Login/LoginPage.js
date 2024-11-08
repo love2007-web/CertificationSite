@@ -41,7 +41,7 @@ function LoginPage() {
 	// const mailErrorText = "Email cannot be empty";
 	// const passwordErrorText = "Password cannot be empty";
 
-	const backend = process.env.REACT_APP_BACKEND_URL;
+	const backend = "http://localhost:5000";
 
 	const handleEmailChange = (event) => {
 		setEmailChanged(true);

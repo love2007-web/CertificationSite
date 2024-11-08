@@ -11,7 +11,7 @@ const mailerSend = new MailerSend({
 	apiKey: process.env.API_KEY,
   });
 
-  const sentFrom = new Sender("you@trial-z86org8z651gew13.mlsender.net", "Certify");
+  const sentFrom = new Sender("you@trial-7dnvo4dj83345r86.mlsender.net", "Certify");
   
   const userRegister = (req, res, next) => {
 	User.find({ email: req.body.email })

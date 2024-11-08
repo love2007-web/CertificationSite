@@ -20,7 +20,7 @@ function MyEvents({ events, setRefresh }) {
 
 	const [loading, setLoading] = useState(false);
 
-	const backend = process.env.REACT_APP_BACKEND_URL;
+	const backend = "http://localhost:5000";
 
 	const onCloseHandle = () => setEventModal(false);
 

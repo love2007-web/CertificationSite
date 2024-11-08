@@ -22,7 +22,7 @@ function Dashboard() {
 	const [drawerOpen, setDrawerOpen] = useState(false);
 	const drawerWidth = 256;
 
-	const backend = process.env.REACT_APP_BACKEND_URL;
+	const backend = "http://localhost:5000";
 
 	// Wrap getCertificates in useCallback
 	const getCertificates = useCallback(async () => {
