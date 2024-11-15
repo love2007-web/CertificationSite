@@ -1,41 +1,46 @@
 const templates = {
   TEMPLATE_1: (userData, qr, link) => {
     return `<!DOCTYPE html>
-      <html>
-      <head>
-          <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600&display=swap" rel="stylesheet">
-          <style>
-              #container {
-                  width: 1080px;
-                  height: 608px;
-                  margin: 0;
-                  padding: 0;
-                  background-image: url('https://i.ibb.co/s1kjBtj/bg1.png');
-                  font-family: 'Montserrat', sans-serif;
-                  position: absolute;
-              }
-              #container div {
-                  position: absolute;
-                  width: 100%;
-                  text-align: center;
-              }
-          </style>
-      </head>
-      <body>
-          <div id="container">
-              <div style="font-size: 55px; font-weight: 600; top: 68px;">Certificate of Completion</div>
-              <div style="top: 140px; font-size: 38px;">This is to certify that</div>
-              <div style="font-size: 38px; font-weight: 600; margin: 16px 0; font-style: oblique; top: 180px;">${userData.name}</div>
-              <div style="font-size: 38px; top: 260px;">has completed the course</div>
-              <div style="font-size: 36px; font-weight: 600; margin: 12px 0; font-style: oblique; top: 310px;">${userData.event}</div>
-              <div style="font-size: 38px; top: 380px;">with a score of <span style="font-weight: 600;">${userData.score}</span></div>
-              <div style="font-size: 36px; font-weight: 600; margin: 8px 0; font-style: oblique; top: 440px;">Dated: ${userData.date}</div>
-              <div style="bottom: 40px; right: 40px; width: fit-content; text-align: right;"><img src="${qr}" style="width: 148px; height: 148px;"></div>
-              <div style="bottom: 18px; right: 18px; font-size: 14px; width: fit-content;"><a href="${link}" style="font-weight: 600;">${link}</a></div>
-              <div style="top: 30px;"><img src="https://certify-hax.s3.ap-south-1.amazonaws.com/certify.png" style="width: 160px; margin-left: -25px;"></div>
-          </div>
-      </body>
-      </html>`;
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #container {
+            width: 1080px;
+            height: 608px;
+            background-image: url('https://i.ibb.co/s1kjBtj/bg1.png');
+            font-family: 'Montserrat', sans-serif;
+            position: relative;
+        }
+        #container div {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div style="font-size: 55px; font-weight: 600; top: 68px;">Certificate of Completion</div>
+        <div style="top: 140px; font-size: 38px;">This is to certify that</div>
+        <div style="font-size: 38px; font-weight: 600; margin: 16px 0; font-style: oblique; top: 180px;">${userData.name}</div>
+        <div style="font-size: 38px; top: 260px;">has completed the course</div>
+        <div style="font-size: 36px; font-weight: 600; margin: 12px 0; font-style: oblique; top: 310px;">${userData.event}</div>
+        <div style="font-size: 38px; top: 380px;">with a score of <span style="font-weight: 600;">${userData.score}</span></div>
+        <div style="font-size: 36px; font-weight: 600; margin: 8px 0; font-style: oblique; top: 440px;">Dated: ${userData.date}</div>
+        <div style="bottom: 40px; right: 40px; width: fit-content; text-align: right;"><img src="${qr}" style="width: 148px; height: 148px;"></div>
+        <div style="bottom: 18px; right: 18px; font-size: 14px; width: fit-content;"><a href="${link}" style="font-weight: 600;">${link}</a></div>
+        <div style="top: 30px;"><img src="https://certify-hax.s3.ap-south-1.amazonaws.com/certify.png" style="width: 160px; margin-left: -25px;"></div>
+    </div>
+</body>
+</html>`;
   },
   TEMPLATE_2: (userData, qr, link) => {
     return `<!DOCTYPE html>

@@ -26,6 +26,7 @@ function Dashboard() {
 
 	// Wrap getCertificates in useCallback
 	const getCertificates = useCallback(async () => {
+		setLoading(true);
 		let url = `${backend}/user/events`;
 		let token = localStorage.getItem("authToken");
 
@@ -47,10 +48,9 @@ function Dashboard() {
 					certs.push(event);
 				}
 			});
-
+			console.log(created);
 			setCertEvents(certs);
 			setCreatedEvents(created);
-			console.log(certs);
 		} catch (error) {
 			console.log(error);
 			// Handle error, if necessary
@@ -58,6 +58,11 @@ function Dashboard() {
 			setLoading(false);
 		}
 	}, [backend]); // Add backend to the dependency array
+
+	useEffect(() => {
+	  console.log(createdEvents);
+	}, [createdEvents])
+	
 
 	useEffect(() => {
 		const token = localStorage.getItem("authToken");
@@ -105,7 +110,7 @@ function Dashboard() {
 			</Drawer>
 			<div className="dash-screen">
 				<TabPanel value={openDash} index={1}>
-					<MyCertificates events={certEvents} />
+					<MyCertificates events={createdEvents} />
 				</TabPanel>
 				<TabPanel value={openDash} index={2}>
 					<MyEvents events={createdEvents} setRefresh={setRefresh} />

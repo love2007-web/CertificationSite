@@ -1,4 +1,5 @@
-import { Container, Grid } from "@mui/material";
+import { Container } from "@mui/material";
+import Grid from "@mui/material/Grid2";
 import Axios from "axios";
 import React, { useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
@@ -8,7 +9,7 @@ import Loading from "../Loading/Loading";
 import { Document, Page } from "react-pdf";
 import "./VerifyPage.css";
 import { pdfjs } from "react-pdf";
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
 function VerifyPage() {
   const [loading, setLoading] = useState(true);

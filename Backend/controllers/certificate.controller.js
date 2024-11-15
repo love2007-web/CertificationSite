@@ -24,7 +24,7 @@ const viewCertificateDetailsFromQrCode = async (req, res, next) => {
       .populate({
         path: "event_id",
         select: "name participants date",
-        populate: "event_id"
+        populate: "_id"
       });
 
     console.log(certificateDoc);

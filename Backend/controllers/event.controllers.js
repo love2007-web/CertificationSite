@@ -14,6 +14,7 @@ const Certificate = require("../models/certificate");
 const emailTemplates = require("../emails/email");
 const htmlTemplates = require("../templates/html-1");
 const AWS = require("aws-sdk");
+const { log } = require("console");
 
 AWS.config.update({
   accessKeyId: process.env.AWS_KEY_ID,
@@ -27,7 +28,7 @@ const mailerSend = new MailerSend({
 });
 
 const sentFrom = new Sender(
-  "you@trial-z86org8z651gew13.mlsender.net",
+  "you@trial-7dnvo4dj83345r86.mlsender.net",
   "Certify"
 );
 
@@ -122,10 +123,19 @@ const getCertificates = async (req, res) => {
         user.link = QRCodeLINK;
 
         const qr = await qrcode.toDataURL(QRCodeLINK);
-        const buff = Buffer.from(
-          qr.replace(/^data:image\/\w+;base64,/, ""),
-          "base64"
-        );
+        log(qr);
+        let buff;
+        try {
+          buff = Buffer.from(
+            qr.replace(/^data:image\/\w+;base64,/, ""),
+            "base64"
+          );
+          log(buff);
+          log("QR code converted to buffer successfully");
+        } catch (error) {
+          console.error("Error converting QR code to buffer:", error);
+          continue;
+        }
 
         const s3Params = {
           Bucket: process.env.AWS_S3_BUCKET,
@@ -141,10 +151,10 @@ const getCertificates = async (req, res) => {
 
         switch (templateNumberAsNumber) {
           case 1:
-            htmlContent = await htmlTemplates.TEMPLATE_1(user, Location, user.link);
+            htmlContent = await htmlTemplates.TEMPLATE_1(user, qr, user.link, Location);
             break;
           case 2:
-            htmlContent = await htmlTemplates.TEMPLATE_2(user, Location, user.link);
+            htmlContent = await htmlTemplates.TEMPLATE_2(user, qr, user.link, Location);
             break;
           case 3:
             htmlContent = await htmlTemplates.TEMPLATE_3(user);

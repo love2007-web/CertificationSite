@@ -97,6 +97,7 @@ function MyEvents({ events, setRefresh }) {
 									info={event}
 									admin={true}
 									id={event.event_id._id}
+									key={event.event_id._id}
 								/>
 							</Grid>
 						))}
