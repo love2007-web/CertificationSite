@@ -24,6 +24,7 @@ function MyCertificates({ events }) {
 									info={event}
 									admin={false}
 									link={event.certificate_link}
+									key={event._id}
 								/>
 							</Grid>
 						))}
