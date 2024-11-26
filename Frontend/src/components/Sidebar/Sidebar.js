@@ -57,7 +57,7 @@ function Sidebar({ name, openDash, setOpenDash, setLoggedIn }) {
         </List>
         <div style={{ textAlign: "center", width: "100%" }}>
           <ActionButton onClick={handleLogout}>
-            <ArrowBack style={{ marginRight: "5px" }} />
+            <ArrowBackIcon style={{ marginRight: "5px" }} />
             Logout
           </ActionButton>
         </div>

@@ -89,67 +89,74 @@ const mailerSend = new MailerSend({
 
 
 const userLogin = (req, res, next) => {
-	User.find({ email: req.body.email })
-		.exec()
-		.then((user) => {
-      console.log(user)
-			if (user.length < 1) {
-				return res.status(401).json({
-					message: "Auth failed: Email not found",
-				});
-			}
-			//if (user[0].is_email_verified === false) {
-     //   console.log("Please Verify your Email")
-				//return res.status(409).json({
-				//	message: "Please verify your email",
-				//});
-		//	}
-			bcrypt.compare(req.body.password, user[0].password, (err, result) => {
-				if (err) {
-          console.log(err)
-					return res.status(401).json({
-						message: "Auth failed",
-					});
-				}
-				if (result) {
-					const token = jwt.sign(
-						{
-              userId: user[0]._id,
-							userType: user[0].userType,
-							userId: user[0]._id,
-							email: user[0].email,
-							name: user[0].name,
-							mobileNumber: user[0].mobileNumber,
-						},
-						process.env.jwtSecret,
-						{
-							expiresIn: "1d",
-						}
-          );
-          console.log(user[0])
-					return res.status(200).json({
-						message: "Auth successful",
-						userDetails: {
-							userType: user[0].userType,
-							userId: user[0]._id,
-							name: user[0].name,
-							email: user[0].email,
-							mobileNumber: user[0].mobileNumber,
-						},
-						token: token,
-					});
-				}
-				res.status(401).json({
-					message: "Incorrect Login Credentials",
-				});
-			});
-		})
-		.catch((err) => {
-			res.status(500).json({
-				error: err,
-			});
-		});
-}
+  User.findOne({ email: req.body.email }) // Using findOne for better readability
+    .exec()
+    .then((user) => {
+      if (!user) {
+        return res.status(401).json({
+          message: "Auth failed: Email not found",
+        });
+      }
+
+      // Uncomment and use email verification if required
+      // if (!user.is_email_verified) {
+      // 	return res.status(409).json({
+      // 		message: "Please verify your email",
+      // 	});
+      // }
+
+      // Compare password
+      bcrypt.compare(req.body.password, user.password, (err, result) => {
+        if (err) {
+          console.error("Bcrypt error:", err);
+          return res.status(500).json({
+            message: "An error occurred during authentication",
+          });
+        }
+
+        if (!result) {
+          return res.status(401).json({
+            message: "Incorrect Login Credentials",
+          });
+        }
+
+        // Generate JWT token
+        const token = jwt.sign(
+          {
+            userId: user._id,
+            userType: user.userType,
+            email: user.email,
+            name: user.name,
+            mobileNumber: user.mobileNumber,
+          },
+          process.env.JWT_SECRET, // Ensure this is correctly set
+          {
+            expiresIn: "1d",
+          }
+        );
+
+        // Send success response
+        return res.status(200).json({
+          message: "Auth successful",
+          userDetails: {
+            userType: user.userType,
+            userId: user._id,
+            name: user.name,
+            email: user.email,
+            mobileNumber: user.mobileNumber,
+          },
+          token,
+        });
+      });
+    })
+    .catch((err) => {
+      console.error("Database error:", err);
+      res.status(500).json({
+        error: "An error occurred while processing the request.",
+      });
+    });
+};
+
 
 
 const verifyEmail = async (req, res, next) => {

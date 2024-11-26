@@ -8,6 +8,7 @@ import Loading from "../Loading/Loading";
 import MyCertificates from "../MyCertificates/MyCertificates";
 import MyEvents from "../MyEvents/MyEvents";
 import "./Dashboard.css";
+import ProfilePage from "../ProfilePage/ProfilePage";
 
 function Dashboard() {
 	const [isLoggedIn, setLoggedIn] = useState(false);
@@ -114,6 +115,9 @@ function Dashboard() {
 				</TabPanel>
 				<TabPanel value={openDash} index={2}>
 					<MyEvents events={createdEvents} setRefresh={setRefresh} />
+				</TabPanel>
+				<TabPanel value={openDash} index={3}>
+					<ProfilePage events={createdEvents} setRefresh={setRefresh} />
 				</TabPanel>
 			</div>
 		</div>
