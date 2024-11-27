@@ -23,7 +23,7 @@ function Dashboard() {
 	const [drawerOpen, setDrawerOpen] = useState(false);
 	const drawerWidth = 256;
 
-	const backend = "http://localhost:5000";
+	const backend = "https://certification-project-backend-ayzx.onrender.com";
 
 	// Wrap getCertificates in useCallback
 	const getCertificates = useCallback(async () => {
@@ -51,6 +51,7 @@ function Dashboard() {
 			});
 			console.log(created);
 			setCertEvents(certs);
+			console.log(certEvents);			
 			setCreatedEvents(created);
 		} catch (error) {
 			console.log(error);
@@ -58,7 +59,7 @@ function Dashboard() {
 		} finally {
 			setLoading(false);
 		}
-	}, [backend]); // Add backend to the dependency array
+	}, [backend, certEvents]); // Add backend to the dependency array
 
 	useEffect(() => {
 	  console.log(createdEvents);

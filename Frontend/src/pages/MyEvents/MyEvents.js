@@ -20,7 +20,7 @@ function MyEvents({ events, setRefresh }) {
 
 	const [loading, setLoading] = useState(false);
 
-	const backend = "http://localhost:5000";
+	const backend = "https://certification-project-backend-ayzx.onrender.com";
 
 	const onCloseHandle = () => setEventModal(false);
 

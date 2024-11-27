@@ -37,7 +37,7 @@ function EventPage() {
 
   const [submitLoading, setSubmitLoading] = useState(false);
 
-  const backend = "http://localhost:5000";
+  const backend = "https://certification-project-backend-ayzx.onrender.com";
 
   const onCloseHandle = () => {
     setOpen(false);

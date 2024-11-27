@@ -41,7 +41,7 @@ function LoginPage() {
 	// const mailErrorText = "Email cannot be empty";
 	// const passwordErrorText = "Password cannot be empty";
 
-	const backend = "http://localhost:5000";
+	const backend = "https://certification-project-backend-ayzx.onrender.com";
 
 	const handleEmailChange = (event) => {
 		setEmailChanged(true);

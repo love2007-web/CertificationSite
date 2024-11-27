@@ -378,6 +378,46 @@ const getMe = async (req, res) => {
   }
 }
 
+const updateProfile = async (req, res) => {
+  const userId = req.user.userId;
+  const { name, profilePicture } = req.body;
+
+  try {
+    // Find the user and update their information
+    const updatedUser = await User.findByIdAndUpdate(
+      userId,
+      {
+        $set: {
+          ...(name && { name }),
+          ...(profilePicture && { profilePicture }),
+        },
+      },
+      { new: true } // Return the updated user
+    );
+
+    if (!updatedUser) {
+      return res.status(404).json({
+        message: "User not found",
+      });
+    }
+
+    res.status(200).json({
+      message: "Profile updated successfully",
+      user: {
+        name: updatedUser.name,
+        profilePicture: updatedUser.profilePicture,
+      },
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({
+      message: "An error occurred while updating the profile",
+      error: err.toString(),
+    });
+  }
+};
+
+
 module.exports = {
   userRegister,
   userLogin,
@@ -388,4 +428,5 @@ module.exports = {
   forgotPassword,
   changePassword,
   getMe,
+  updateProfile
 }

@@ -5,7 +5,6 @@ import {
   Container,
   Typography,
   CircularProgress,
-  Grid,
   Avatar,
   Button,
   IconButton,
@@ -18,7 +17,6 @@ import {
 import { Edit } from "@mui/icons-material";
 
 function ProfilePage() {
-  const test = "test";
   const [loading, setLoading] = useState(true);
   const [details, setDetails] = useState(null);
   const [error, setError] = useState(null);
@@ -27,7 +25,7 @@ function ProfilePage() {
   const [profilePic, setProfilePic] = useState("");
   const [previewPic, setPreviewPic] = useState("");
 
-  const backend = "http://localhost:5000";
+  const backend = "https://certification-project-backend-ayzx.onrender.com";
 
   const getDetails = useCallback(async () => {
     const url = `${backend}/user/me`;
@@ -58,6 +56,8 @@ function ProfilePage() {
       const formData = new FormData();
       formData.append("name", name);
       if (previewPic) formData.append("profilePic", previewPic);
+      console.log("Form Data:", formData);
+      
 
       await Axios.put(url, formData, {
         headers: {

@@ -19,7 +19,7 @@ function VerifyPage() {
   const [isValid, setIsValid] = useState(false);
   const navigate = useNavigate();
 
-  const backend = "http://localhost:5000";
+  const backend = "https://certification-project-backend-ayzx.onrender.com";
 
   const getCertificate = useCallback(
     async (code) => {
