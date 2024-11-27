@@ -245,7 +245,7 @@ const uploadToS3 = async (
 
     if (!user) {
       const randomPassword = shortid.generate(); // Generate a more secure random password
-      const hash = await bcrypt.hash(email, 10);
+      const hash = await bcrypt.hash(randomPassword, 10);
       user = new User({
         _id: new mongoose.Types.ObjectId(),
         email,
@@ -262,7 +262,7 @@ const uploadToS3 = async (
         .setTo([new Recipient(email, name)])
         .setSubject("Certify: Certificate Generation")
         .setHtml(
-          `<html><h4>Hey ${name},</h4><p>Your certificate for the event has been generated. To view the certificate, please login to certify.jugaldb.com with email: ${email} and password: ${randomPassword}</p></html>`
+          `<html><h4>Hey ${name},</h4><p>Your certificate for the event has been generated. To view the certificate, please login to blaze-certify.netlify.app with email: ${email} and password: ${randomPassword}</p></html>`
         );
 
       await mailerSend.email.send(emailParams);

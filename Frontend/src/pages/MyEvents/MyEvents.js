@@ -138,9 +138,8 @@ function MyEvents({ events, setRefresh }) {
 						<TextField
 							label="Event Date"
 							type="date"
-							defaultValue="2020-10-08"
 							style={{
-								backgroundColor: "rgb(31, 31, 31)",
+								width: "100%",
 								marginTop: "5%",
 								marginRight: "2%",
 								marginLeft: "2%",

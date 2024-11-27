@@ -28,6 +28,7 @@ function EventPage() {
   const { id } = useParams();
 
   const [loading, setLoading] = useState(true);
+  const [isDragging, setIsDragging] = useState(true);
   const [details, setDetails] = useState(null);
 
   const [open, setOpen] = useState(false);
@@ -196,36 +197,78 @@ function EventPage() {
         style={{ width: "100%" }}
       >
         <div className="add-participants-modal">
+          {/* Template Selection Section */}
           <div className="template-zone">
-            <h3>Select a template: </h3>
+            <h3>Select a template:</h3>
             <ImageSelect
               images={templates}
               selected={selected}
               setSelected={setSelected}
             />
           </div>
+
+          {/* Enhanced Dropzone Section */}
           <div className="dropzone">
-            <h3>Upload a file: </h3>
-            <Dropzone onDrop={handleFileDrop} accept=".csv">
+            <h3>Upload a file:</h3>
+            <Dropzone
+              onDrop={handleFileDrop}
+              accept=".csv"
+              onDragEnter={() => setIsDragging(true)}
+              onDragLeave={() => setIsDragging(false)}
+            >
               {({ getRootProps, getInputProps }) => (
                 <section>
-                  <div {...getRootProps()}>
+                  <div
+                    {...getRootProps()}
+                    style={{
+                      border: isDragging
+                        ? "2px dashed #4caf50"
+                        : "2px dashed #ccc",
+                      borderRadius: "8px",
+                      padding: "20px",
+                      textAlign: "center",
+                      backgroundColor: isDragging ? "#e8f5e9" : "#f9f9f9",
+                      cursor: "pointer",
+                      transition: "all 0.3s ease",
+                    }}
+                  >
                     <input {...getInputProps()} />
-                    <AddCircleIcon className="drop-icon" />
+                    <AddCircleIcon
+                      style={{
+                        fontSize: "48px",
+                        color: isDragging ? "#4caf50" : "#9e9e9e",
+                        marginBottom: "8px",
+                      }}
+                    />
                     <p
                       style={{
-                        color: "rgb(160, 160, 160)",
+                        color: isDragging ? "#4caf50" : "#9e9e9e",
+                        fontWeight: isDragging ? "bold" : "normal",
+                        margin: "0",
                       }}
                     >
                       {file
                         ? `Selected file: ${file.name}`
                         : "Drag and drop or click to select a CSV file"}
                     </p>
+                    {file && (
+                      <p
+                        style={{
+                          marginTop: "8px",
+                          fontSize: "12px",
+                          color: "#616161",
+                        }}
+                      >
+                        File size: {(file.size / 1024).toFixed(2)} KB
+                      </p>
+                    )}
                   </div>
                 </section>
               )}
             </Dropzone>
           </div>
+
+          {/* Action Button Section */}
           <div className="add-participants-btn">
             <ActionButton onClick={handleSubmit}>
               {!submitLoading ? (
@@ -237,6 +280,7 @@ function EventPage() {
           </div>
         </div>
       </Dialog>
+
       <Toast ref={toast} />
     </div>
   );
