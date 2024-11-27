@@ -59,7 +59,7 @@ function Dashboard() {
 		} finally {
 			setLoading(false);
 		}
-	}, [backend, certEvents]); // Add backend to the dependency array
+	}, [backend]); // Add backend to the dependency array
 
 	useEffect(() => {
 	  console.log(createdEvents);
